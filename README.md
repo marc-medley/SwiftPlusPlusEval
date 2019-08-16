@@ -1,12 +1,23 @@
 # SwiftPlusPlusEval
 
-_This repository is an attempt to successfully compile and test the [JacopoMangiavacchi SwiftPlusPlus](https://github.com/JacopoMangiavacchi/SwiftPlusPlus) package which provides a Swift Wrapper, calling a C Wrapper, calling a C++ wrapper, calling STL with Swift Package Manager (Linux)._
+_This repository is an attempt to successfully compile and test the [JacopoMangiavacchi / SwiftPlusPlus](https://github.com/JacopoMangiavacchi/SwiftPlusPlus) package which provides a Swift Wrapper, calling a C Wrapper, calling a C++ wrapper, calling STL with Swift Package Manager (Linux)._
 
 > Please see full instruction at <https://medium.com/@JMangia/swift-swift-c-c-stl-9e620e471145>
 
+_Highlight from Jacopo Mangiavacchi's Medium post ["Swift++ == Swift =&gt; C =&gt; C++ =&gt; STL"](https://medium.com/@JMangia/swift-swift-c-c-stl-9e620e471145) are noted below._
+
 ---
 
-At this point in time, the package builds without errors on macOS. However, the test fails with the following errors.
+At this point in time, the package builds without errors. However, the test fails with the following errors.
+
+_Linux, Swift 5.1-dev installed, using Swift 4.2 in package_
+
+```
+XCTAssertEqual failed: ("Optional("\0")") is not equal to ("Optional("0")")
+XCTAssertEqual failed: ("Optional("0")") is not equal to ("Optional("2")")
+```
+
+_macOS, Swift 5.0.1 installed, using Swift 4.2 in package_
 
 ```
 XCTAssertEqual failed: ("Optional("p")") is not equal to ("Optional("0")")
@@ -14,8 +25,6 @@ XCTAssertEqual failed: ("Optional("p")") is not equal to ("Optional("2")")
 ```
 
 ---
-
-_Highlight from Jacopo Mangiavacchi's Medium post ["Swift++ == Swift =&gt; C =&gt; C++ =&gt; STL"](https://medium.com/@JMangia/swift-swift-c-c-stl-9e620e471145) are noted below._
 
 Swift Package supports for C language can directly import C Libraries (.so or .dylib). However, C++ class interaction are not a simple a C library interaction.
 
@@ -86,4 +95,3 @@ swift run -Xcxx -std=c++11
 * [GitHub/JacopoMangiavacchi: SwiftPlusPlus](https://github.com/JacopoMangiavacchi/SwiftPlusPlus)
 * [Medium: Jacopo Mangiavacchi ](https://medium.com/@JMangia)
     * [Swift++ == Swift => C => C++ => STL](https://medium.com/@JMangia/swift-swift-c-c-stl-9e620e471145) published Mar 16, 2018.
-    
