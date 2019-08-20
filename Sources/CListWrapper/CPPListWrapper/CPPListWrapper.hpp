@@ -39,10 +39,12 @@ public:
     void pop_front();           // – Removes the first element of the list, and reduces size of the list by 1
     void pop_back();            // – Removes the last element of the list, and reduces size of the list by 1
     CPPListIterator* begin();   // – Returns an iterator pointing to the first element of the list
-    CPPListIterator* end();     // – Returns an iterator pointing to the theoretical last element which follows the last element
+    CPPListIterator* end();     // – Returns an iterator pointing to the theoretical last element which 
+                                //   follows the last element
     bool empty();               // – Returns whether the list is empty(1) or not(0)
-//    void insert(iterator, void* g) – Insert a new element in the list before the element at a specified position
-//    void erase(iterator) – Remove a single element from the list
+//  void insert(iterator, void* g) // – Insert a new element in the list before the element 
+                                   // at a specified position
+//  void erase(iterator) – Remove a single element from the list
     long size();                 // – Returns the number of elements in the list
     
 private:
